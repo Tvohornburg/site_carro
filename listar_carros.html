@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href ="css/uikit-rtl.css"/>
+    <link rel="stylesheet" href ="css/carro.css"/>
+    <meta name="viewport" content="width=devise-width, inicial-scale=1">
+
+</head>
+<body>
+    <script src="js/jquery.js"></script>
+    <script src="js/uikit.js"></script>
+
+<!-- Barra de navegação -->
+<nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">   
+        <ul class="uk-navbar-nav">
+            <a class="uk-navbar-item uk-logo" href="home.html"><span class="uk-icon uk-icon-image" style="background-image: url(images/logo.png);"></span></a>
+            <li><a href="login.html">Anuncie Seu Carro</a></li>
+            <li>
+                <a href="#">Comprar</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        
+                        <!-- LISTAR OS CARROS -->
+                        <li><a href="listar_carros.html">Destaques</a></li>
+                        
+                    </ul>
+                </div>
+            </li>                
+        </ul>    
+    </div>
+
+    <div class="uk-navbar-right">    
+        <ul class="uk-navbar-nav">
+            <div>
+                <a class="uk-navbar-toggle" uk-search-icon href="#"></a>
+                <div class="uk-drop" uk-drop="mode: click; pos: left-center; offset: 0">
+                    <form class="uk-search uk-search-navbar uk-width-1-1">
+                        <input class="uk-search-input" type="search" placeholder="O que precisa?" autofocus>
+                    </form>
+                </div>
+            </div>
+            <li>
+                <a href="#">Logar</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        
+                        <li><a href="logar.html">Ja tem sua conta?</a></li>
+                        <li><a href="cadastrar.html">Crie uma agora mesmo</a></li>
+                        
+                    </ul>
+                </div>
+            </li>
+        </ul>   
+    </div>
+
+</nav>
+<!-- Fim da barra -->
+
+    <h2>DESTAQUES</h2>
+
+    <div>
+
+        <div uk-slideshow="ratio: 10:5" class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="animation: push" >
+
+            <ul class="uk-slideshow-items">
+        
+                <li>
+                    <img src="images/carro1.jfif" alt="Carro1" uk-cover>
+                </li>
+                <li>
+                    <img src="images/carro2.jfif" alt="Carro2" uk-cover>
+                </li>
+                <li>
+                    <img src="images/fuscafoda.jfif" alt="Carro3" uk-cover>
+                </li>
+            </ul>
+
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+</html>
