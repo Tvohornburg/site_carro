@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="menu_responsivo.css">
+    <link rel="stylesheet" href="subnav_responsivo.css">
+    <link rel="stylesheet" href="filtro_responsivo.css">
+    <link rel="stylesheet" href="lista_responsiva.css">
+    <link rel="stylesheet" href="rodape_responsivo.css">
+    <title>Teste 2</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+}
+
+main {
+    position: relative;
+    width: 100%;
+}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="modelo.js"></script>
+<script src="base_dados.js"></script>
+<script src="f_listagem.js"></script>
+<script>
+
+function detalhar(id){
+    var selector = "#anuncio-" + id;
+    
+    if ($(selector + " .img").css("display") == "block"){
+        $(selector + " .img").css("display","none");
+        $(selector + " .info").css("display","block");
+    }
+    else{
+        $(selector + " .img").css("display","block");
+        $(selector + " .info").css("display","none");
+    }
+    
+};
+
+$(document).ready(function(){
+
+if ($(window).width() <= 470){
+    $(".dropdown-content").toggle(500,"swing");
+    $("#subnav").toggle(500,"swing");
+}
+
+$(".dropbnt").click(function(){
+    if ($(window).width() <= 470){
+        $(".dropdown-content").toggle(500,"swing");
+    }
+})
+
+$("#li-listagem").click(function(){
+    if ($(window).width() <= 470){
+        $("#subnav").toggle(500,"swing");
+    }
+})
+
+$("#preferencias").click(function(){
+    if ($(window).width() <= 470)
+        $("#filtro").css("width","100%");
+    else
+        $("#filtro").css("width","450px");
+})
+
+$("#close-sidenav").click(function(){
+    $("#filtro").css("width","0");
+})
+
+$("#listar").click(filtrar);
+
+$(".img").click(function(){
+    alert("OI");
+})
+
+})
+
+</script>
+
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <ul>
+                <li class="logo"><a href="#">LOGO</a></li>
+                <li><a href="#">Cadastro/Login</a></li>
+                
+                <li class="dropdown"><a href="javascript:void(0)" class="dropbnt">Anuncios</a>
+                    <div class="dropdown-content">
+                        <a href="#">Comprar</a>
+                        <a href="#">Vender</a>
+                    </div>
+                </li>
+                
+                <li><a href="#">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <ul id="ul-listagem">
+            <li id="li-listagem"><a href="#">Listagem</a></li>
+        </ul>
+        <div id="subnav">
+            <form class="example">
+                <button id="listar" type="button">Listar</button>
+                <button id="preferencias" type="button">Filtro</button>
+                <input type="text" placeholder="Pesquisar...">
+                <button id="search" type="button"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+
+        <div id="filtro">
+            <a href="javascript:void(0)" id="close-sidenav">&times;</a>
+            <form>
+                <button id="limpar" type="reset">Limpar</button>
+
+                <fieldset>
+                    <legend>Valores Numéricos</legend>
+                    <label for="min_ano">Ano Mínimo</label>
+                    <input id="min_ano" type="number" min="1900" max="2021">
+                    <label for="max_ano">Ano Máximo</label>
+                    <input id="max_ano" type="number" min="1900" max="2021">
+            
+                    <label for="min_preco">Preço Mínimo</label>
+                    <input id="min_preco" type="number" min="0" max="100000000">
+                    <label for="max_preco">Preço Máximo</label>
+                    <input id="max_preco" type="number" min="0" max="100000000">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Tipo de Câmbio</legend>
+                    <label for="mt">Manual</label>
+                    <input type="radio" id="mt" name="cambio" value="0"><br>
+                    <label for="at">Automático</label>
+                    <input type="radio" id="at" name="cambio" value="1">
+                </fieldset>
+    
+                <fieldset>
+                    <legend>Outras Características</legend>
+                    <label class="l-break">Tipo de combustivel</label>
+                    <label for="gasolina">Gasolina</label>
+                    <input type="checkbox" id="gasolina" name="combustivel" value="0"><br>
+                    <label for="alcool">Álcool</label>
+                    <input type="checkbox" id="alcool" name="combustivel" value="1"><br>
+                    <label for="diesel">Diesel</label>
+                    <input type="checkbox" id="diesel" name="combustivel" value="2"><br>
+                    <label for="flex">Flex</label>
+                    <input type="checkbox" id="flex" name="combustivel" value="3"><br>
+                    <label for="hibrido">Híbrido</label>
+                    <input type="checkbox" id="hibrido" name="combustivel" value="5"><br>
+                    <label for="eletrico">Elétrico</label>
+                    <input type="checkbox" id="eletrico" name="combustivel" value="4"><br>
+                    
+                    
+                    <label class="l-break">Tipo da Carroceria</label>
+                    <label for="seda">Sedã</label>
+                    <input type="checkbox" id="seda" name="carroceria" value="0"><br>
+                    <label for="hatch">Hatch</label>
+                    <input type="checkbox" id="hatch" name="carroceria" value="1"><br>
+                    <label for="suv">SUV</label>
+                    <input type="checkbox" id="suv" name="carroceria" value="2"><br>
+                    <label for="picape">Picape</label>
+                    <input type="checkbox" id="picape" name="carroceria" value="3"><br>
+                    <label for="cupe">Cupê</label>
+                    <input type="checkbox" id="cupe" name="carroceria" value="4"><br>
+                    <label for="perua">Perua</label>
+                    <input type="checkbox" id="perua" name="carroceria" value="5"><br>
+                    <label for="VM">Van/Minivan</label>
+                    <input type="checkbox" id="VM" name="carroceria" value="6"><br>
+                    <label for="conversivel">Conversível</label>
+                    <input type="checkbox" id="conversivel" name="carroceria" value="7"><br>
+                    <label for="jipe">Jipe</label>
+                    <input type="checkbox" id="jipe" name="carroceria" value="8"><br>
+                </fieldset>
+    
+                <fieldset>
+                    <legend>Informações no Sistema</legend>
+                    <label for="marcas">Marca: </label>
+                    <select id="marcas" name="marca">
+                        <option value="-1" selected>Nenhuma</option>
+                        <option value="0">Honda</option>
+                        <option value="1">Volkswagen</option>
+                        <option value="2">Ford</option>
+                        <option value="3">Chevrolet</option>
+                        <option value="4">BMW</option>
+                        <option value="5">Jeep</option>
+                        <option value="6">Ferrari</option>
+                        <option value="7">Renault</option>
+                    </select>
+        
+        
+                    <label for="local">Local: </label>
+                    <select id="local" name="local">
+                        <option value="-1" selected>Nenhum</option>
+                        <option value="0">Blumenau - SC</option>
+                        <option value="1">Pomerode - SC</option>
+                        <option value="2">Benedito Novo - SC</option>
+                        <option value="3">Jaraguá do Sul - SC</option>
+                        <option value="4">São Paulo - SP</option>
+                        <option value="5">Indaial - SC</option>
+                        <option value="6">Florianópolis - SC</option>
+                        <option value="7">Curitiba - PR</option>
+                        <option value="8">Campinas - SP</option>
+                    </select>
+                </fieldset>
+            </form>
+        </div>
+
+        <div id="lista">
+
+            <div id=lista1></div>
+            <div id=lista-1></div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div id="contatos">
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-linkedin"></a>
+            <a href="#" class="fa fa-twitter"></a>
+        </div>
+        <div id="direitos">
+            <span>@NOME 2021</span>
+        </div>
+    </footer>
+
+</body>
+</html>

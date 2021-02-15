@@ -1,0 +1,50 @@
+#subnav{
+    position: relative;
+    width: 100%;
+}
+
+#subnav *{
+    margin: 2px 0;
+}
+
+#subnav button{
+    background-color: #f1f1f1;;
+    border: none;
+    color: black;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-align: center;
+    width: 100%;
+}
+
+#subnav input{
+    height: 30px;
+    width: 80%;
+    border: none;
+    padding: 6px;
+    border: solid 1px black;
+}
+
+#subnav #search {
+    float: right;
+    width: 20%;
+    padding: 6px;
+    background: rgb(32, 74, 158);
+    color: white;
+    font-size: 16px;
+}
+
+@media screen and (min-width:470px){
+
+    #subnav input{
+        width: 52%;
+    }
+
+    #subnav #search{
+        width: 10%;
+    }
+    
+    #subnav button{
+        width: 18%;
+    }
+}

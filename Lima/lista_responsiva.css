@@ -1,0 +1,201 @@
+#lista {
+    position: relative;
+    width: 100%;
+}
+
+#lista1{
+    width: 100%;
+    padding: 50px;
+}
+
+#lista-1{
+    width: 100%;
+    padding: 50px;
+}
+
+.anuncio {
+    background-color: #74748b;
+    height: 250px;
+    width: 200px;
+    margin: 30px auto;
+}
+
+.anuncio .img {
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 200px;
+}
+
+.anuncio .img img {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: block;
+}
+
+.anuncio .info {
+    display: none;
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.anuncio .detalhes {
+    position: relative;
+    width: 200px;
+    height: 50px;
+    padding: 15px 40px;
+    background-color: rgb(161,37,54);
+    color: #f2f2f2;
+}
+
+.anuncio .info{
+    color: #f2f2f2;
+}
+
+.anuncio .info .modelo{
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+    overflow-wrap: break-word;
+    margin: 10px 0;
+}
+
+.anuncio .info .preco{
+    display: block;
+}
+
+.anuncio .info .ano{
+    display: block;
+}
+
+.anuncio .info .preco::before{
+    content: "R$ ";
+}
+
+.anuncio .info .b-anuncio{
+    position: absolute;
+    bottom: 10%;
+    margin-top: 100px;
+    padding: 15px 40px;
+    background-color: rgb(161,37,54);
+    color: #f2f2f2;
+}
+
+@media screen and (min-width:600px){
+    .anuncio{
+        width: 300px;
+        height: 350px;
+    }
+
+    .anuncio .info, .anuncio .img, .anuncio .img img{
+        width: 300px;
+        height: 300px;
+    }
+
+    .anuncio .detalhes{
+        width: 300px;
+    }
+
+    .anuncio .info{
+        font-size: 30px;
+    }
+
+    .anuncio .info .modelo{
+        font-size: 40px;
+    }
+}
+
+@media screen and (min-width:800px){
+    #lista1, #lista-1 {
+        width: 40%;
+        display: inline-block;
+        position: absolute;
+    }
+
+    #lista-1{
+        left: 0%;
+    }
+    #lista1{
+        right: 10%;
+    }
+}
+
+@media screen and (min-width:1200px){
+    #lista1, #lista-1 {
+        width: 42%;
+    }
+
+    #lista-1{
+        left: 0%;
+    }
+    #lista1{
+        right: 5%;
+    }
+    
+    .anuncio .detalhes{
+        display: none;
+    }
+    
+    .anuncio {
+        background-color: #74748b;
+        height: 150px;
+        width: 550px;
+        border-right: solid 15px rgb(161,37,54);
+        margin: 30px auto;
+    }
+    
+    .anuncio .img {
+        position: absolute;
+        display: block;
+        width: 200px;
+        height: 200px;
+    }
+    
+    .anuncio .info {
+        position: absolute;
+        display: block;
+        width: 350px;
+        height: 150px;
+        margin-left: 210px;
+        margin-right: 10;
+    }
+    
+    .anuncio .img img {
+        width: 200px;
+        height: 150px;
+    }
+    
+    .anuncio .info span {
+        color: #f2f2f2;
+        position: absolute;
+    }
+    
+    .anuncio .info .modelo {
+        font-weight: bold;
+        font-size: 20px;
+        overflow-wrap: break-word;
+        top: 5%;
+    }
+    
+    .anuncio .info .preco {
+        font-weight: bold;
+        font-size: 18px;
+        bottom: 10%;
+    }
+    
+    .anuncio .info .ano {
+        font-size: 15px;
+        bottom: 30%;
+    }
+    
+    .anuncio .info .b-anuncio {
+        position: absolute;
+        bottom: 10%;
+        left: 55%;
+        padding: 15px 40px;
+        background-color: rgb(161,37,54);
+        color: #f2f2f2;
+    }
+}

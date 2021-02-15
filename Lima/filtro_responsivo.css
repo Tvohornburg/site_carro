@@ -1,0 +1,79 @@
+#filtro {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(32, 74, 158);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+#close-sidenav {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#filtro fieldset{
+    background-color:rgb(24, 32, 96);
+    padding: 10px 40px;
+    margin: 20px 60px;
+    border: solid 1px black;
+}
+
+#filtro legend{
+    color: white;
+    font-weight: bold;
+    background-color:rgb(161,37,54);
+    padding: 10px 10px;
+}
+
+#filtro label{
+    color: white;
+}
+
+#filtro input[type=number]{
+    display: block;
+    width: 100px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+#filtro select{
+    display: block;
+    margin: 10px 0;
+}
+
+#filtro .l-break{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#filtro .checkbox-field {
+    display: grid;
+    grid-template-areas: "left right";
+    width: 150px;
+}
+
+#filtro #limpar{
+    padding: 20px 50px;
+    position: absolute;
+    top: 0;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
