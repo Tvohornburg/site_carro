@@ -12,6 +12,9 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit-icons.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="modelo.js"></script>
+    <script src="base_dados.js"></script>
+    <script src="login.js"></script>
 
     <title>Home</title>
 
@@ -22,6 +25,16 @@
 }
         
 </style>
+
+<script>
+
+$(document).ready(function(){
+
+    verificar_login();
+
+})
+
+</script>
 
 </head>
 <body>
@@ -37,7 +50,7 @@
             
             <div class="uk-navbar-right">
                 <ul class="uk-navbar-nav">
-                    <li class="uk-active"><a href="#">Home</a></li>
+                    <li class="uk-active"><a href="home.html">Home</a></li>
                     <li>
                         <a href="#">Anúncios</a>
                         <div class="uk-navbar-dropdown">
@@ -47,7 +60,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li><a href="#">Conta</a></li>
+                    <li><a class="link-login" href="#">Conta</a></li>
                 </ul>
             </div>
         </nav>
@@ -69,11 +82,11 @@
                 <ul class="uk-nav uk-nav-default">
                     <li class="uk-active"><a href="#">LOGO</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li class="uk-nav-header"><a href="#">Home</a></li>
+                    <li class="uk-nav-header"><a href="home.html">Home</a></li>
                     <li class="uk-nav-header">Anúncios</li>
                     <li><a href="#"> Comprar</a></li>
                     <li><a href="#"> Vender</a></li>
-                    <li class="uk-nav-header"><a href="#">Conta</a></li>
+                    <li class="uk-nav-header"><a class="link-login" href="#">Conta</a></li>
                     <li class="uk-nav-divider"></li>
                 </ul>
             
