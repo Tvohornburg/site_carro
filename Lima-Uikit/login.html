@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="login.css">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit-icons.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Login</title>
+
+<style>
+
+#main-content{
+    margin: 50px 0 !important;
+}
+
+</style>
+
+
+<script>
+
+$(document).ready(function(){
+    $("#b-op-login").click(function(){
+        $("#form-cadastro").css("display","none");
+        $("#form-login").css("display","flex");
+        
+        $("#b-op-login").css("background-color","black");
+        $("#b-op-login").css("color","white");
+
+        $("#b-op-cadastro").css("background-color","white");
+        $("#b-op-cadastro").css("color","black");
+    })
+
+    $("#b-op-cadastro").click(function(){
+        $("#form-login").css("display","none");
+        $("#form-cadastro").css("display","flex");
+
+        $("#b-op-cadastro").css("background-color","black");
+        $("#b-op-cadastro").css("color","white");
+
+        $("#b-op-login").css("background-color","white");
+        $("#b-op-login").css("color","black");
+    })
+})
+
+
+</script>
+
+</head>
+<body>
+    <header>
+        <nav id="nav-display-secundario" class="uk-navbar-container" uk-navbar>
+            
+            <div class="uk-navbar-left">
+                <ul class="uk-navbar-nav">
+                    <li><a href="#">LOGO</a></li>
+                </ul>
+            </div>
+            
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav">
+                    <li><a href="#">Home</a></li>
+                    <li>
+                        <a href="#">Anúncios</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li><a href="#">Comprar</a></li>
+                                <li><a href="#">Vender</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#" class="uk-active">Conta</a></li>
+                </ul>
+            </div>
+        
+        </nav>
+        
+
+        <nav id="nav-display-primario" class="uk-navbar uk-navbar-container" uk-navbar>
+            <div class="uk-navbar-left">
+                <a id="toggle-menu" class="uk-navbar-toggle" href="#menu-offcanvas" uk-toggle>
+                    <span uk-navbar-toggle-icon></span><span class="uk-margin-small-left">Menu</span>
+                </a>
+            </div>
+        </nav>
+
+
+        <div id="menu-offcanvas" uk-offcanvas="overlay: true">
+            <div class="uk-offcanvas-bar">
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+                <ul class="uk-nav uk-nav-default">
+                    <li class="uk-active"><a href="#">LOGO</a></li>
+                    <li class="uk-nav-divider"></li>
+                    <li class="uk-nav-header"><a href="#">Home</a></li>
+                    <li class="uk-nav-header">Anúncios</li>
+                    <li><a href="#"> Comprar</a></li>
+                    <li><a href="#"> Vender</a></li>
+                    <li class="uk-nav-header"><a href="#">Conta</a></li>
+                    <li class="uk-nav-divider"></li>
+                </ul>
+            
+            </div>
+        </div>
+
+    </header>
+
+    <main id="main-content" class="uk-container uk-margin">
+
+        <div id="opcao-conta" class="uk-grid uk-flex uk-flex-center">
+            <button id="b-op-login" class="uk-button uk-button-default uk-width-1-6@m">Login</button>
+            <button id="b-op-cadastro" class="uk-button uk-button-default uk-width-1-6@m">Cadastro</button>
+        </div>
+
+        <div id="form-login" class="uk-grid uk-flex uk-flex-center">
+            <form class="uk-form-stacked">
+
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="login-email">Email</label>
+                    <div class="uk-form-controls">
+                        <div class="uk-inline">
+                            <span class="uk-form-icon" uk-icon="icon: user"></span>
+                            <input class="uk-input" id="login-email" type="text" placeholder="example@email.com" required>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="login-senha">Senha</label>
+                    <div class="uk-form-controls">
+                        <div class="uk-inline">
+                            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                            <input class="uk-input" id="login-senha" type="password" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-margin">
+                    <button class="uk-width-1-1 uk-button uk-button-primary uk-button-large uk-margin" href="#">Login</button>
+                    <a class="uk-float-left uk-link uk-link-muted" href="#">Esqueceu a Senha?</a>
+                </div>
+        
+            </form>
+        </div>
+    
+
+        <div id="form-cadastro" class="uk-grid uk-flex uk-flex-center">
+            <form class="uk-form-stacked">
+
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="cadastro-nome">Nome Completo</label>
+                    <div class="uk-form-controls">
+                        <div class="uk-inline">
+                            <input class="uk-input" id="cadastro-nome" type="text" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="cadastro-email">Email</label>
+                    <div class="uk-form-controls">
+                        <div class="uk-inline">
+                            <input class="uk-input" id="cadastro-email" type="text" required>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-stacked-text">Senha</label>
+                    <div class="uk-form-controls">
+                        <div class="uk-inline">
+                            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                            <input class="uk-input" id="form-stacked-text" type="password" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-margin">
+                    <div class="uk-form-label">Anunciante</div>
+                    <div class="uk-form-controls">
+                        <label><input class="uk-radio" type="radio" name="tipo_anunciante" value="1"> Profissional</label><br>
+                        <label><input class="uk-radio" type="radio" name="tipo_anunciante" value="0"> Particular</label>
+                    </div>
+                </div>
+
+                <div class="uk-margin">
+                    <button class="uk-width-1-1 uk-button uk-button-primary uk-button-large" href="#">Cadastrar</button>
+                </div>
+        
+            </form>
+        </div>
+        
+
+    </main>
+
+    <footer>
+        <div class="uk-grid-match uk-grid-small uk-text-center" uk-grid>
+            <div class="uk-width-1-2@m">
+                <div class="uk-card uk-card-default uk-card-body">INFO 1</div>
+            </div>
+            
+            <div class="uk-width-1-2@m">
+                <div class="uk-card uk-card-default uk-card-body">INFO 2</div>
+            </div>
+            
+            <div class="uk-width-1-1@m">
+                <div class="uk-card uk-card-default uk-card-body">
+                    <a href="#" class="uk-icon-button uk-margin-small-right" uk-icon="twitter"></a>
+                    <a href="#" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook"></a>
+                    <a href="#" class="uk-icon-button" uk-icon="google-plus"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

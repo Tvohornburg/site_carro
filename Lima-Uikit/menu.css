@@ -1,0 +1,13 @@
+#nav-display-secundario{
+    display: none;
+}
+
+@media screen and (min-width: 500px){
+    #nav-display-primario{
+        display: none;
+    }
+
+    #nav-display-secundario{
+        display: flex;
+    }
+}
