@@ -27,6 +27,5 @@ function verificar_login(){
     
     $(".link-login").each(function(){
         $(this).attr("href",endereco);
-        console.log("Opa");
     })
 }

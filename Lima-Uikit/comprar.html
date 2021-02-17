@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="vender.css">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit-icons.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="modelo.js"></script>
+    <script src="base_dados.js"></script>
+    <script src="login.js"></script>
+    <script src="listagem.js"></script>
+    <title>Comprar</title>
+
+<style>
+
+#main-content{
+    margin: 50px 0 !important;
+}
+
+</style>
+
+
+<script>
+
+$(document).ready(function(){
+    $("#b-op-login").click(function(){
+        $("#form-cadastro").css("display","none");
+        $("#form-login").css("display","flex");
+        
+        $("#b-op-login").css("background-color","black");
+        $("#b-op-login").css("color","white");
+
+        $("#b-op-cadastro").css("background-color","white");
+        $("#b-op-cadastro").css("color","black");
+    })
+
+    $("#b-op-cadastro").click(function(){
+        $("#form-login").css("display","none");
+        $("#form-cadastro").css("display","flex");
+
+        $("#b-op-cadastro").css("background-color","black");
+        $("#b-op-cadastro").css("color","white");
+
+        $("#b-op-login").css("background-color","white");
+        $("#b-op-login").css("color","black");
+    })
+
+    $("#login-button").click(realizar_login);
+    verificar_login();
+
+    if (sessionStorage.getItem("user_id") == null){
+        $("#div-erro").css("display","block");
+        $("#div-vender").css("display","none");
+    }
+
+    $("#link-teste").click(listar);
+
+})
+
+
+</script>
+
+</head>
+<body>
+    <header>
+        <nav id="nav-display-secundario" class="uk-navbar-container" uk-navbar>
+            
+            <div class="uk-navbar-left">
+                <ul class="uk-navbar-nav">
+                    <li><a href="#">LOGO</a></li>
+                </ul>
+            </div>
+            
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav">
+                    <li><a href="home.html">Home</a></li>
+                    <li>
+                        <a href="#">Anúncios</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li><a href="#">Comprar</a></li>
+                                <li><a href="vender.html">Vender</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a class="link-login" href="#" class="uk-active">Conta</a></li>
+                </ul>
+            </div>
+        
+        </nav>
+        
+
+        <nav id="nav-display-primario" class="uk-navbar uk-navbar-container" uk-navbar>
+            <div class="uk-navbar-left">
+                <a id="toggle-menu" class="uk-navbar-toggle" href="#menu-offcanvas" uk-toggle>
+                    <span uk-navbar-toggle-icon></span><span class="uk-margin-small-left">Menu</span>
+                </a>
+            </div>
+        </nav>
+
+
+        <div id="menu-offcanvas" uk-offcanvas="overlay: true">
+            <div class="uk-offcanvas-bar">
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+                <ul class="uk-nav uk-nav-default">
+                    <li class="uk-active"><a href="#">LOGO</a></li>
+                    <li class="uk-nav-divider"></li>
+                    <li class="uk-nav-header"><a href="home.html">Home</a></li>
+                    <li class="uk-nav-header">Anúncios</li>
+                    <li><a href="#"> Comprar</a></li>
+                    <li><a href="#"> Vender</a></li>
+                    <li class="uk-nav-header"><a class="link-login" href="#">Conta</a></li>
+                    <li class="uk-nav-divider"></li>
+                </ul>
+            
+            </div>
+        </div>
+
+    </header>
+
+    <main id="main-content" class="uk-container uk-margin">
+
+        <a id="link-teste" href="#">TESTES!</a>
+
+        <div class="uk-grid-divider uk-margin uk-grid-column-medium" uk-grid>
+
+            <div id="lista-1" class="uk-width-1-2@m"></div>
+            <div id="lista1" class="uk-width-1-2@m"></div>
+        
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="uk-grid-match uk-grid-small uk-text-center" uk-grid>
+            <div class="uk-width-1-2@m">
+                <div class="uk-card uk-card-default uk-card-body">INFO 1</div>
+            </div>
+            
+            <div class="uk-width-1-2@m">
+                <div class="uk-card uk-card-default uk-card-body">INFO 2</div>
+            </div>
+            
+            <div class="uk-width-1-1@m">
+                <div class="uk-card uk-card-default uk-card-body">
+                    <a href="#" class="uk-icon-button uk-margin-small-right" uk-icon="twitter"></a>
+                    <a href="#" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook"></a>
+                    <a href="#" class="uk-icon-button" uk-icon="google-plus"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
