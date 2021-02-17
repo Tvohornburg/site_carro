@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="menu.css">
-    <link rel="stylesheet" href="vender.css">
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/css/uikit.min.css" />
 
@@ -12,19 +10,14 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit-icons.min.js"></script>
 
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="vender.css">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="modelo.js"></script>
     <script src="base_dados.js"></script>
     <script src="login.js"></script>
     <title>Login</title>
-
-<style>
-
-#main-content{
-    margin: 50px 0 !important;
-}
-
-</style>
 
 
 <script>
@@ -75,12 +68,12 @@ $(document).ready(function(){
 
 </head>
 <body>
-    <header>
+    <header class="uk-margin">
         <nav id="nav-display-secundario" class="uk-navbar-container" uk-navbar>
             
             <div class="uk-navbar-left">
                 <ul class="uk-navbar-nav">
-                    <li><a href="#">LOGO</a></li>
+                    <li><span class="logo">LOGO</span></li>
                 </ul>
             </div>
             
@@ -99,7 +92,6 @@ $(document).ready(function(){
                     <li><a class="link-login" href="#">Conta</a></li>
                 </ul>
             </div>
-        
         </nav>
         
 
@@ -117,7 +109,7 @@ $(document).ready(function(){
                 <button class="uk-offcanvas-close" type="button" uk-close></button>
 
                 <ul class="uk-nav uk-nav-default">
-                    <li class="uk-active"><a href="#">LOGO</a></li>
+                    <li class="uk-active"><span class="logo">LOGO</span></li>
                     <li class="uk-nav-divider"></li>
                     <li class="uk-nav-header"><a href="home.html">Home</a></li>
                     <li class="uk-nav-header">Anúncios</li>
@@ -271,7 +263,7 @@ $(document).ready(function(){
                 </div>
 
                 <div class="uk-margin">
-                    <button id="anunciar-button" class="uk-width-1-1 uk-button uk-button-primary uk-button-large" type="button">Anúnciar</button>
+                    <button id="anunciar-button" class="uk-width-1-1 uk-button-default uk-button-large" type="button">Anunciar</button>
                 </div>
 
             </form>

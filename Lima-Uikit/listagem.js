@@ -11,10 +11,10 @@ function listar(){
             "<div id=anuncio-" + item.id_anuncio + " class='uk-flex-middle' uk-grid>"    
                     +"<div class='uk-width-2-3@s uk-width-1-2@xl'>"
                         +"<ul class='uk-list uk-list-striped'>"
-                            +"<li class='info-modelo'>Modelo:" + item.modelo + "</li>"
+                            +"<li class='info-modelo'>Modelo: " + item.modelo + "</li>"
                             +"<li class='info-ano'>Ano: " + item.ano + "</li>"
-                            +"<li class='info-km'>Kilometragem: " + item.kilometragem + "</li>"
-                            +"<li class='info-preco'>Preço: " + item.preco + "</li>"
+                            +"<li class='info-km'>Kilometragem: " + item.kilometragem + " km</li>"
+                            +"<li class='info-preco'>Preço: R$ " + item.preco + "</li>"
                         +"</ul>"
                     +"</div>"
                     
@@ -23,7 +23,7 @@ function listar(){
                     +"</div>"
                     
                     +"<div class='uk-width-1-1'>"
-                        +"<button type='button' class='uk-width-1-3@s uk-width-1-2@xl'>Ver Anúncio</button>"
+                        +"<button type='button' class='uk-button-primary uk-width-1-3@s uk-width-1-2@xl'>Ver Anúncio</button>"
                     +"</div>"
                 +"</div>"
         )

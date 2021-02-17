@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br" style="background-color: #f8f8f8;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="usuario.css">
+
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit-icons.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="modelo.js"></script>
+    <script src="base_dados.js"></script>
+    
+
+    <title>Perfil</title>
+
+    <style>
+
+        #main-content{
+            margin: 50px 0 !important;
+        }
+                
+    </style>
+
+</head>
+<body>
+
+    <header class="uk-margin">
+        <nav id="nav-display-secundario" class="uk-navbar-container" uk-navbar>
+            
+            <div class="uk-navbar-left">
+                <ul class="uk-navbar-nav">
+                    <li><a href="#">LOGO</a></li>
+                </ul>
+            </div>
+            
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav">
+                    <li class="uk-active"><a href="home.html">Home</a></li>
+                    <li>
+                        <a href="#">Anúncios</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li><a href="#">Comprar</a></li>
+                                <li><a href="#">Vender</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a class="link-login" href="usuario.html">Perfil</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+
+        <nav id="nav-display-primario" class="uk-navbar uk-navbar-container" uk-navbar>
+            <div class="uk-navbar-left">
+                <a id="toggle-menu" class="uk-navbar-toggle" href="#menu-offcanvas" uk-toggle>
+                    <span uk-navbar-toggle-icon></span><span class="uk-margin-small-left">Menu</span>
+                </a>
+            </div>
+        </nav>
+
+
+        <div id="menu-offcanvas" uk-offcanvas="overlay: true">
+            <div class="uk-offcanvas-bar">
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+                <ul class="uk-nav uk-nav-default">
+                    <li class="uk-active"><a href="#">LOGO</a></li>
+                    <li class="uk-nav-divider"></li>
+                    <li class="uk-nav-header"><a href="home.html">Home</a></li>
+                    <li class="uk-nav-header">Anúncios</li>
+                    <li><a href="#"> Comprar</a></li>
+                    <li><a href="#"> Vender</a></li>
+                    <li class="uk-nav-header"><a class="link-login" href="usuario.html">Perfil</a></li>
+                    <li class="uk-nav-divider"></li>
+                </ul>
+                <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>            
+                    <li><a href="editar_perfil.html">Editar Perfil</a></li>
+                    <li><a href="favoritos.html">Favoritos</a></li>
+                    <li class="uk-parent">
+                        <a href="#">Meus anúncios</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="#">Editar</a></li>
+                            <li><a href="#">Criar</a></li>
+                        </ul>
+                    </li>
+                    <li><b><a href="#">Sair</a></b></li>
+                </ul>
+            
+            </div>
+        </div>
+
+    </header>
+
+    <div class="menu-lateral">
+        <div class="uk-width-1-2@s uk-width-2-5@m" style="width: auto;">
+        <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>            
+            <li><a href="editar_perfil.html">Editar Perfil</a></li>
+            <li><a href="favoritos.html">Favoritos</a></li>
+            <li class="uk-parent">
+                <a href="#">Meus anúncios</a>
+                <ul class="uk-nav-sub">
+                    <li><a href="#">Editar</a></li>
+                    <li><a href="#">Criar</a></li>
+                </ul>
+            </li>
+            <li style="position: absolute; bottom: 2px;"><a href="#">Sair</a></li>
+
+        </ul> 
+        </div>
+    </div>
+    
+    <div class="conteudo-usuario">
+        <h3>Dados</h3>
+
+        
+    
+    
+    
+    </div>
+    
+
+
+</body>
+</html>

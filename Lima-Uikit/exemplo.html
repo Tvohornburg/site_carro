@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="modelo.js"></script>
+    <script src="base_dados.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+    sessionStorage.setItem("id_anuncio", 9); // Isso daqui será feito pela página de vendas/listagem!
+
+    // Pegar objeto
+    var objeto = lista_anuncios[sessionStorage.getItem("id_anuncio")];
+
+    // Inserir os valores dentro dos inputs
+    $("#input-modelo").val(objeto.modelo);
+    $("#input-ano").val(objeto.ano);
+    $("#input-km").val(objeto.kilometragem);
+    $("#input-preco").val(objeto.preco);
+
+})
+
+
+
+
+</script>
+
+</head>
+<body>
+    <h1>Exemplo</h1>
+    <form action="#">
+
+        <!--Usei input pq depois fica fácil de fazer um botão de 'Editar Perfil'-->
+        <!--Obs. readonly impede que o valor do input seja alterado manualmente-->
+        <label for="input-modelo">Modelo: </label><input id="input-modelo" type="text" readonly>
+        <label for="input-ano">Ano: </label><input id="input-ano" type="text" readonly>
+        <label for="input-km">Kilometragem: </label><input id="input-km" type="text" readonly>
+        <label for="input-preco">Preço: </label><input id="input-preco" type="text" readonly>
+        <!--Aí continua...-->
+
+    </form>
+</body>
+</html>

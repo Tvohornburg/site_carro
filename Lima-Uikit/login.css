@@ -2,6 +2,12 @@
     display: none;
 }
 
+.uk-button{
+    border: solid 1px black;
+    background-color: white;
+    color: black;
+}
+
 #b-op-login{
     background-color: #111;
     color: white;

@@ -1,0 +1,33 @@
+#button-limpar {
+    width: 100%;
+    background-color: rgb(161,37,54);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+}
+
+.uk-button-primary {
+    background-color: rgb(161,37,54);
+    padding: 20px 0;
+}
+
+.uk-button-primary:hover {
+    background-color: #7d1c29;
+    font-weight: bold;
+}
+
+.uk-button-primary:focus{
+    background-color: #7d1c29;
+    font-weight: bold;
+    border: solid 2px black;
+}
+
+.uk-search-default .uk-search-input{
+    border-color: black !important;
+}
+
+@media screen and (max-width:640px){
+    .uk-button-default {
+        padding: 20px 0;
+    }
+}
