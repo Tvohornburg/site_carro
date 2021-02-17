@@ -91,12 +91,12 @@ $(document).ready(function(){
                         <a href="#">Anúncios</a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
-                                <li><a href="#">Comprar</a></li>
+                                <li><a href="comprar.html">Comprar</a></li>
                                 <li><a href="vender.html">Vender</a></li>
                             </ul>
                         </div>
                     </li>
-                    <li><a class="link-login" href="#" class="uk-active">Conta</a></li>
+                    <li><a class="link-login" href="#">Conta</a></li>
                 </ul>
             </div>
         
@@ -158,6 +158,13 @@ $(document).ready(function(){
                 </div>
 
                 <div class="uk-margin">
+                    <label class="uk-form-label" for="input-modelo">Marca</label>
+                    <div class="uk-form-controls">
+                        <input class="uk-input" id="input-marca" type="text">
+                    </div>
+                </div>
+
+                <div class="uk-margin">
                     <label class="uk-form-label" for="input-ano">Ano</label>
                     <div class="uk-form-controls">
                         <input class="uk-input" id="input-ano" type="number">
@@ -179,7 +186,7 @@ $(document).ready(function(){
                 </div>
 
                 <div class="uk-margin">
-                    <label class="uk-form-label" for="tipo_combustivel">Combústivel</label>
+                    <label class="uk-form-label">Combústivel</label>
                     <div class="uk-form-controls">
                         <select class="uk-select" id="tipo_combustivel">
                             <option value="0">Gasolina</option>
@@ -230,7 +237,7 @@ $(document).ready(function(){
                 </div>
 
                 <div class="uk-margin">
-                    <label class="uk-form-label" for="tipo_carroceria">Carroceria</label>
+                    <label class="uk-form-label">Carroceria</label>
                     <div class="uk-form-controls">
                         <select class="uk-select" id="tipo_carroceria">
                             <option value="0">Sedã</option>

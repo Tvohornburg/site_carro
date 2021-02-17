@@ -61,7 +61,7 @@ $(document).ready(function(){
         $("#div-vender").css("display","none");
     }
 
-    $("#link-teste").click(listar);
+    $("#listar").click(filtrar);
 
 })
 
@@ -86,7 +86,7 @@ $(document).ready(function(){
                         <a href="#">Anúncios</a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
-                                <li><a href="#">Comprar</a></li>
+                                <li><a href="comprar.html">Comprar</a></li>
                                 <li><a href="vender.html">Vender</a></li>
                             </ul>
                         </div>
@@ -125,11 +125,156 @@ $(document).ready(function(){
             </div>
         </div>
 
+
+        <div id="subnav" class="uk-grid-collapse uk-width-1-1 uk-margin" uk-grid>
+
+            <button id="listar" class="uk-button-default uk-width-1-4@s" type="button">Listar</button>
+            <button id="preferencias" class="uk-button-default uk-width-1-4@s" uk-toggle="target: #filtro" type="button">Preferências</button>
+            
+            <form class="uk-search uk-search-default uk-width-1-2@s">
+                <span uk-search-icon></span>
+                <input class="uk-search-input" type="search" placeholder="Search...">
+            </form>
+
+        </div>
+
+        <div id="filtro" uk-offcanvas>
+            <div class="uk-offcanvas-bar">
+    
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+    
+
+                <form class="uk-form-vertical uk-margin">
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="min_preco">Preço Mínimo</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="min_preco" type="number">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="max_preco">Preço Máximo</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="max_preco" type="number">
+                        </div>
+                    </div>
+    
+    
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="min_ano">Ano Mínimo</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="min_ano" type="number">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="max_ano">Ano Máximo</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="max_ano" type="number">
+                        </div>
+                    </div>
+    
+    
+                    <div class="uk-margin">
+                        <label class="uk-form-label">Combústivel</label>
+                        <div class="uk-form-controls">
+                            <label class="uk-form-label" for="gasolina">Gasolina</label>
+                            <input class="uk-checkbox" type="checkbox" id="gasolina" name="combustivel" value="0"><br>
+                            <label class="uk-form-label" for="alcool">Álcool</label>
+                            <input class="uk-checkbox" type="checkbox" id="alcool" name="combustivel" value="1"><br>
+                            <label class="uk-form-label" for="diesel">Diesel</label>
+                            <input class="uk-checkbox" type="checkbox" id="diesel" name="combustivel" value="2"><br>
+                            <label class="uk-form-label" for="flex">Flex</label>
+                            <input class="uk-checkbox" type="checkbox" id="flex" name="combustivel" value="3"><br>
+                            <label class="uk-form-label" for="hibrido">Híbrido</label>
+                            <input class="uk-checkbox" type="checkbox" id="hibrido" name="combustivel" value="5"><br>
+                            <label class="uk-form-label" for="eletrico">Elétrico</label>
+                            <input class="uk-checkbox" type="checkbox" id="eletrico" name="combustivel" value="4"><br>
+                        </div>
+                    </div>
+    
+                    <div class="uk-margin">
+                        <div class="uk-form-label">Câmbio</div>
+                        <div class="uk-form-controls uk-form-controls-text">
+                            <label><input class="uk-radio" type="radio" name="tipo_cambio" value="0"> Manual</label><br>
+                            <label><input class="uk-radio" type="radio" name="tipo_cambio" value="1"> Automático</label>
+                        </div>
+                    </div>
+    
+
+    
+                    <div class="uk-margin">
+                        <label class="uk-form-label">Carroceria</label>
+                        <div class="uk-form-controls">
+                            <label class="uk-form-label" for="seda">Sedã</label>
+                            <input class="uk-checkbox" type="checkbox" id="seda" name="carroceria" value="0"><br>
+                            <label class="uk-form-label" for="hatch">Hatch</label>
+                            <input class="uk-checkbox" type="checkbox" id="hatch" name="carroceria" value="1"><br>
+                            <label class="uk-form-label" for="suv">SUV</label>
+                            <input class="uk-checkbox" type="checkbox" id="suv" name="carroceria" value="2"><br>
+                            <label class="uk-form-label" for="picape">Picape</label>
+                            <input class="uk-checkbox" type="checkbox" id="picape" name="carroceria" value="3"><br>
+                            <label class="uk-form-label" for="cupe">Cupê</label>
+                            <input class="uk-checkbox" type="checkbox" id="cupe" name="carroceria" value="4"><br>
+                            <label class="uk-form-label" for="perua">Perua</label>
+                            <input class="uk-checkbox" type="checkbox" id="perua" name="carroceria" value="5"><br>
+                            <label class="uk-form-label" for="VM">Van/Minivan</label>
+                            <input class="uk-checkbox" type="checkbox" id="VM" name="carroceria" value="6"><br>
+                            <label class="uk-form-label" for="conversivel">Conversível</label>
+                            <input class="uk-checkbox" type="checkbox" id="conversivel" name="carroceria" value="7"><br>
+                            <label class="uk-form-label" for="jipe">Jipe</label>
+                            <input class="uk-checkbox" type="checkbox" id="jipe" name="carroceria" value="8"><br>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label">Marca</label>
+                        <div class="uk-form-controls">
+                            <select id="marcas" class="uk-select" name="marca">
+                                <option value="-1" selected>Nenhuma</option>
+                                <option value="0">Honda</option>
+                                <option value="1">Volkswagen</option>
+                                <option value="2">Ford</option>
+                                <option value="3">Chevrolet</option>
+                                <option value="4">BMW</option>
+                                <option value="5">Jeep</option>
+                                <option value="6">Ferrari</option>
+                                <option value="7">Renault</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label">Local</label>
+                        <div class="uk-form-controls">
+                            <select id="local" class="uk-select" name="marca">
+                                <option value="-1" selected>Nenhum</option>
+                                <option value="0">Blumenau - SC</option>
+                                <option value="1">Pomerode - SC</option>
+                                <option value="2">Benedito Novo - SC</option>
+                                <option value="3">Jaraguá do Sul - SC</option>
+                                <option value="4">São Paulo - SP</option>
+                                <option value="5">Indaial - SC</option>
+                                <option value="6">Florianópolis - SC</option>
+                                <option value="7">Curitiba - PR</option>
+                                <option value="8">Campinas - SP</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <button class="uk-button" type="reset">Limpar</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
     </header>
 
     <main id="main-content" class="uk-container uk-margin">
-
-        <a id="link-teste" href="#">TESTES!</a>
 
         <div class="uk-grid-divider uk-margin uk-grid-column-medium" uk-grid>
 
