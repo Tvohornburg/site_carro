@@ -23,36 +23,6 @@
 <script>
 
 $(document).ready(function(){
-    alert(
-        "Caso não queira realizar o Login e deseja visualizar o form de venda,"
-        +"execute o seguinte comando no console do navegador: \n"
-        +"\nsessionStorage.setItem('user_id',0)\n"
-        +"\nNÃO ESQUEÇA DE APAGAR OS DADOS DA SESSION DEPOIS!"
-    )
-
-    $("#b-op-login").click(function(){
-        $("#form-cadastro").css("display","none");
-        $("#form-login").css("display","flex");
-        
-        $("#b-op-login").css("background-color","black");
-        $("#b-op-login").css("color","white");
-
-        $("#b-op-cadastro").css("background-color","white");
-        $("#b-op-cadastro").css("color","black");
-    })
-
-    $("#b-op-cadastro").click(function(){
-        $("#form-login").css("display","none");
-        $("#form-cadastro").css("display","flex");
-
-        $("#b-op-cadastro").css("background-color","black");
-        $("#b-op-cadastro").css("color","white");
-
-        $("#b-op-login").css("background-color","white");
-        $("#b-op-login").css("color","black");
-    })
-
-    $("#login-button").click(realizar_login);
 
     verificar_login();
 
@@ -60,6 +30,13 @@ $(document).ready(function(){
         $("#div-erro").css("display","block");
         $("#div-vender").css("display","none");
     }
+
+    alert(
+        "Caso não queira realizar o Login e deseja visualizar o form de venda,"
+        +"execute o seguinte comando no console do navegador: \n"
+        +"\nsessionStorage.setItem('user_id',0)\n"
+        +"\nNÃO ESQUEÇA DE APAGAR OS DADOS DA SESSION DEPOIS!"
+    )
 
 })
 
