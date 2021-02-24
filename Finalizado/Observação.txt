@@ -1,0 +1,18 @@
+Algumas Observações Relevantes:
+
+--  O site é meramente ilustrativo e para fins educacionais;
+
+--  As imagens foram retiradas de anúncios reais. Você pode conferir
+    o link na seção img/anuncios - Os links estão no arquivo de texto!
+
+--  Foram criadas certas funcionalidades com JS e jquery para tornar
+    acrescer caracteristicas ao trabalho. Todavia deve-se observar que
+    as soluções aqui adotadas não visam ser as melhores, e muito menos
+    aplicavéis em sistemas reais complexos que contam com uma base da
+    dados dinâmica (algo que não está presente no trabalho). Isso qualquer
+    dizer que as soluções não foram desenvolvidas de forma genérica a funcionar
+    em qualquer aplicação - Deve-se observar o contexto em caso de reúso de códigos;
+
+--  No que tange a estilização das Páginas, grande parte foi feita usando a 
+    ferramenta Uikit. Dessa forma, caso existam dúvidas acerca a estilização,
+    favor observar a documentação da ferramenta!  

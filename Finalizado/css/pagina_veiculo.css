@@ -1,0 +1,19 @@
+#anuncio li:nth-child(odd){
+    background-color: #f8f8f8;
+}
+
+#anuncio li:nth-child(even){
+    background-color:#bfbfbf;
+}
+
+#desc {
+    background-color: #f8f8f8;
+    border: solid 1px black;
+}
+
+#anuncio #slide-show #list-images a {
+    color: #f8f8f8 !important;
+    background-color: #2e2e37;
+    border: solid 1px black;
+    border-radius: 50%;
+}

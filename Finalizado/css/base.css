@@ -1,0 +1,112 @@
+body, html {
+    height: 100%;
+}
+
+#nav-display-secundario .logo {
+    margin-left: 20px;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+.uk-navbar-container:not(.uk-navbar-transparent){
+    background-color: #2e2e37 !important;
+    color: white !important;
+}
+
+#nav-display-primario #toggle-menu{
+    color: white;
+}
+
+#nav-display-secundario{
+    display: none;
+}
+
+.uk-navbar-nav > li > a{
+    color: white !important;
+}
+
+#menu-offcanvas .uk-offcanvas-bar .uk-nav > li > a{
+    padding-left: 10px;
+}
+
+#menu-offcanvas .uk-offcanvas-bar .uk-nav > li > a:hover{
+    border-left: solid 5px rgb(161,37,54);
+    background-color: #111;
+    color: white;
+}
+
+#nav-display-secundario .uk-navbar-nav > li > a:hover{
+    border-bottom: solid 5px rgb(161,37,54);
+    background-color: #111;
+}
+
+#main-content{
+    margin: 50px 0 !important;
+}
+
+footer {
+    position: relative;
+    margin-top: 350px !important;
+}
+
+footer, footer .uk-card-default {
+    background-color: #2e2e37;
+    color: white;
+}
+
+footer .uk-icon-button {
+    background-color: #515161;
+    color: white;
+}
+
+.uk-button-default{
+    background-color: rgb(32, 74, 158) !important;
+    color: white;
+}
+
+.uk-button-default:hover{
+    background-color: rgb(24, 32, 96) !important;
+    color: white;
+}
+
+.uk-button-default:focus{
+    background-color: rgb(24, 32, 96) !important;
+    color: white;
+    border: solid 2px black;
+}
+
+.uk-offcanvas-close:hover{
+    color: rgb(161,37,54);
+}
+
+.uk-button-primary {
+    background-color: rgb(161,37,54);
+
+}
+
+.uk-button-primary:hover {
+    background-color: #7d1c29;
+    font-weight: bold;
+}
+
+.uk-button-primary:focus{
+    background-color: #7d1c29;
+    font-weight: bold;
+    border: solid 2px black;
+}
+
+a:focus {
+    font-weight: bold;
+}
+
+@media screen and (min-width: 500px){
+    #nav-display-primario{
+        display: none;
+    }
+
+    #nav-display-secundario{
+        display: flex;
+    }
+}
