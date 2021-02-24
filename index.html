@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Uma plataforma de Anúncios de Veículos criada para apresentação na disciplina de Desenvolvimento Web I - Bacharelado em Ciências da Computação - IFC Campus Blumenau">
+        <meta name="keywords" content="Trabalho Web, Desenvolvimento Web, Plataforma de Anúncios, Veículos, Uikit">
+        <meta name="author" content="Gabriel Eduardo Lima e Thiago Vinícius de Oliveira Hornburg">
+        
+        <link rel="shortcut icon" href="img/icon.png">
+
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/css/uikit.min.css" />
+
+        <!-- UIkit JS -->
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit-icons.min.js"></script>
+        
+        <!-- CSS Próprio-->
+        <link rel="stylesheet" href="css/base.css">
+        
+        <!-- JS Próprio -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/modelo.js"></script>
+        <script src="js/base_dados.js"></script>
+        <script src="js/login.js"></script>
+
+        <title>Home</title>
+
+        <script>      
+
+$(document).ready(function(){
+
+    verificar_login();
+
+})
+        </script>
+
+    </head>
+    <body>
+
+        <header class="uk-margin">
+
+            <!-- 
+                Menu para quando o usuário estiver usando dispositivos de tela pequena!
+                Mesma solução adotada pelos exemplos do framework Uikit
+            -->
+            <nav id="nav-display-primario" class="uk-navbar uk-navbar-container" uk-navbar>
+                <div class="uk-navbar-left">
+                    <a id="toggle-menu" class="uk-navbar-toggle" href="#menu-offcanvas" uk-toggle>
+                        <span uk-navbar-toggle-icon></span><span class="uk-margin-small-left">Menu</span>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- 
+                Menu offcanvas que será ativado por um link do menu primário
+            -->
+            <div id="menu-offcanvas" uk-offcanvas="overlay: true">
+                <div class="uk-offcanvas-bar">
+                    <button aria-label="Fechar Menu Principal" class="uk-offcanvas-close" type="button" uk-close></button>
+
+                    <ul class="uk-nav uk-nav-default">
+                        <li class="uk-active"><span class="logo">LOGO</span></li>
+                        <li class="uk-nav-divider"></li>
+                        <li class="uk-nav-header"><a href="index.html">Home</a></li>
+                        <li class="uk-nav-header">Anúncios</li>
+                        <li><a href="comprar.html"> Comprar</a></li>
+                        <li><a href="vender.html"> Vender</a></li>
+                        <li class="uk-nav-header"><a class="link-login" href="#">Conta</a></li>
+                        <li class="uk-nav-divider"></li>
+                    </ul>
+                
+                </div>
+            </div>
+
+            <!-- 
+                Menu para quando o usuário estiver usando dispositivos de tela grande!
+                Mesma solução adotada pelos exemplos do framework Uikit
+            -->
+            <nav id="nav-display-secundario" class="uk-navbar-container" uk-navbar>
+                
+                <div class="uk-navbar-left">
+                    <ul class="uk-navbar-nav">
+                        <li><span class="logo">LOGO</span></li>
+                    </ul>
+                </div>
+                
+                <div class="uk-navbar-right">
+                    <ul class="uk-navbar-nav">
+                        <li><a href="index.html" tabindex="1" accesskey="h">Home</a></li>
+                        <li>
+                            <a href="#" tabindex="2" accesskey="a">Anúncios</a>
+                            <div class="uk-navbar-dropdown">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li><a href="comprar.html" accesskey="c">Comprar</a></li>
+                                    <li><a href="vender.html" accesskey="v">Vender</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a class="link-login" href="#" tabindex="3" accesskey="u">Usuário</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+        </header>
+
+        <main class="uk-container uk-margin">
+        
+            <div class="uk-grid uk-margin">
+                <h1 class="uk-heading-medium">Bem vindo!</h1>
+            </div>
+            
+            <hr class="uk-grid-divider">
+            
+            <div class="uk-grid uk-margin">
+                <h2 class="uk-heading-small-bullet">A Plataforma</h2>
+                <p class="uk-margin">
+                    Olá, seja muito bem vindo a plataforma LOGO cars! Nossa plataforma
+                    pode ajudar você a vender seu carro, bem como encontrar a nova máquina
+                    dos seus sonhos. Através do preenchimento de um simples formulário você
+                    já pode anunciar o seu veículo! Além disso nossa ferramenta de busca
+                    super "complexa" trará o veículo nas especificações que você procura!
+                    ATENÇÃO - ISSO NÃO É UMA PLATAFORMA VERDADEIRA - ESSE SITE CONSISTE EM
+                    UM TRABALHO ACADÊMICO! 
+                </p>
+            </div>
+            
+            <hr class="uk-grid-divider">
+            
+            <div class="uk-grid uk-margin">
+
+                <div class="uk-width-1-3@m uk-margin">
+                    <img src="img/logo_ifc.png" alt="Logo IFC - Campus Blumenau">
+                </div>
+
+                <div class="uk-width-2-3@m uk-margin">
+                    <h2 class="uk-heading-small-bullet">Sobre o Trabalho</h2>
+                    <p>
+                        Esse o trabalho prático final para a disciplina de Desenvolvimento Web I
+                        do curso de Bacharelado em Ciências da Computação - <a href="http://blumenau.ifc.edu.br/" target="blank">IFC Campus Blumenau</a>.
+                        Os anúncios aqui contidos são apenas de exemplificação das funcionalidades
+                        do sistema e o link para os anúncios reais podem ser encontrados no mesmo
+                        diretório do projeto (na pasta img/anuncios existe um arquivo txt com os links).
+                        Agora confira abaixo alguns detalhes sobre o trabalho! 
+                    </p>
+
+                    <h3>Alunos que Desenvolveram</h3>
+                    <ul>
+                        <li>Gabriel Eduardo Lima <a href="mailto:limaedugabriel@=gmail.com" target="blank">Email</a> <a href="https://github.com/Lima001" target="blank">Github</a></li>
+                        <li>Thiago Vinícius de Oliveira Hornburg <a href="mailto:ygfd.to@gmail.com" target="blank">Email</a> <a href="https://github.com/Tvohornburg" target="blank">Github</a></li>
+                    </ul>
+
+                    <h3>Tecnologias Usadas</h3>
+                    <ul>
+                        <li>HTML - Estruturação da Página</li>
+                        <li>CSS - Estilização da Página</li>
+                        <li>Javascript e jquery - Funcionalidades e Dinâmica da Página</li>
+                        <li><a href="https://getuikit.com/" target="blank">UiKit</a> - Estilização Principal da Página</li>
+                    </ul>
+
+                    <h3>Funcionalidades Implementadas</h3>
+                    <ul>
+                        <li>Login de Usuário</li>
+                        <li>Listagem de Anúncios Dinâmica</li>
+                        <li>Filtro de Anúncios</li>
+                        <li>Base da Dados Estática Orientada a Objetos</li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <hr class="uk-grid-divider">
+
+        </main>
+
+        <footer>
+            <div class="uk-grid-match uk-grid-small uk-text-center" uk-grid>
+                <div class="uk-width-1-2@m">
+                    <div class="uk-card uk-card-default uk-card-body">Rua Fulano de Tal - Estado Beltrano</div>
+                </div>
+                
+                <div class="uk-width-1-2@m">
+                    <div class="uk-card uk-card-default uk-card-body">Contato: (-47) 99900-6169</div>
+                </div>
+                
+                <div class="uk-width-1-1@m">
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <a href="#" aria-label="Contatos - Twitter" tabindex="4" class="uk-icon-button uk-margin-small-right" uk-icon="twitter"></a>
+                        <a href="#" aria-label="Contatos - Facebook" tabindex="5" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook"></a>
+                        <a href="#" aria-label="Contatos - Google+" tabindex="6" class="uk-icon-button" uk-icon="google-plus"></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+</html>

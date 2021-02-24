@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Uma plataforma de Anúncios de Veículos criada para apresentação na disciplina de Desenvolvimento Web I - Bacharelado em Ciências da Computação - IFC Campus Blumenau">
+        <meta name="keywords" content="Trabalho Web, Desenvolvimento Web, Plataforma de Anúncios, Veículos, Uikit">
+        <meta name="author" content="Gabriel Eduardo Lima e Thiago Vinícius de Oliveira Hornburg">
+        
+        <link rel="shortcut icon" href="img/icon.png">
+
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/css/uikit.min.css" />
+
+        <!-- UIkit JS -->
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit-icons.min.js"></script>
+
+        <!-- CSS Próprio-->
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/vender.css">
+        
+        <!-- JS Próprio -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/modelo.js"></script>
+        <script src="js/base_dados.js"></script>
+        <script src="js/login.js"></script>
+        
+        <title>Login</title>
+
+    <script>
+
+$(document).ready(function(){
+
+    verificar_login();
+
+    if (sessionStorage.getItem("user_id") == null){
+        $("#div-erro").css("display","block");
+        $("#div-vender").css("display","none");
+    }
+})
+
+    </script>
+
+    </head>
+    <body>
+        <header class="uk-margin">
+
+            <!-- 
+                Menu para quando o usuário estiver usando dispositivos de tela pequena!
+                Mesma solução adotada pelos exemplos do framework Uikit
+            -->
+            <nav id="nav-display-primario" class="uk-navbar uk-navbar-container" uk-navbar>
+                <div class="uk-navbar-left">
+                    <a id="toggle-menu" class="uk-navbar-toggle" href="#menu-offcanvas" uk-toggle>
+                        <span uk-navbar-toggle-icon></span><span class="uk-margin-small-left">Menu</span>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- 
+                Menu offcanvas que será ativado por um link do menu primário
+            -->
+            <div id="menu-offcanvas" uk-offcanvas="overlay: true">
+                <div class="uk-offcanvas-bar">
+                    <button aria-label="Fechar Menu Principal" class="uk-offcanvas-close" type="button" uk-close></button>
+
+                    <ul class="uk-nav uk-nav-default">
+                        <li class="uk-active"><span class="logo">LOGO</span></li>
+                        <li class="uk-nav-divider"></li>
+                        <li class="uk-nav-header"><a href="index.html">Home</a></li>
+                        <li class="uk-nav-header">Anúncios</li>
+                        <li><a href="comprar.html"> Comprar</a></li>
+                        <li><a href="vender.html"> Vender</a></li>
+                        <li class="uk-nav-header"><a class="link-login" href="#">Conta</a></li>
+                        <li class="uk-nav-divider"></li>
+                    </ul>
+                
+                </div>
+            </div>
+
+            <!-- 
+                Menu para quando o usuário estiver usando dispositivos de tela grande!
+                Mesma solução adotada pelos exemplos do framework Uikit
+            -->
+            <nav id="nav-display-secundario" class="uk-navbar-container" uk-navbar>
+                
+                <div class="uk-navbar-left">
+                    <ul class="uk-navbar-nav">
+                        <li><span class="logo">LOGO</span></li>
+                    </ul>
+                </div>
+                
+                <div class="uk-navbar-right">
+                    <ul class="uk-navbar-nav">
+                        <li><a href="index.html" tabindex="1" accesskey="h">Home</a></li>
+                        <li>
+                            <a href="#" tabindex="2" accesskey="a">Anúncios</a>
+                            <div class="uk-navbar-dropdown">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li><a href="comprar.html" accesskey="c">Comprar</a></li>
+                                    <li><a href="vender.html" accesskey="v">Vender</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a class="link-login" href="#" tabindex="3" accesskey="u">Usuário</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+        </header>
+
+        <main id="main-content" class="uk-container uk-margin">
+
+            <div id="div-erro" class="uk-alert-warning" uk-alert>
+                <a class="uk-alert-close" uk-close></a>
+                <h1>Atenção!</h1>
+                <p>É preciso estar logado no Sistema para realizar um Anúncio!</p>
+            </div>
+
+            <div id="div-vender" class="uk-grid uk-flex uk-flex-center">
+                <form class="uk-form-horizontal uk-margin-large">
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="input-preco">Preço</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="input-preco" type="number">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="input-modelo">Modelo</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="input-modelo" type="text">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="input-modelo">Marca</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="input-marca" type="text">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="input-ano">Ano</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="input-ano" type="number">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="input-km">Kilometragem</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="input-km" type="number">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="input-cor">Cor</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="input-cor" type="text">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label">Combústivel</label>
+                        <div class="uk-form-controls">
+                            <select class="uk-select" id="tipo_combustivel">
+                                <option value="0">Gasolina</option>
+                                <option value="1">Álcool</option>
+                                <option value="2">Diesel</option>
+                                <option value="3">Flex</option>
+                                <option value="4">Elétrico</option>
+                                <option value="5">Híbrido</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <div class="uk-form-label">Câmbio</div>
+                        <div class="uk-form-controls uk-form-controls-text">
+                            <label><input class="uk-radio" type="radio" name="tipo_cambio" value="0"> Manual</label><br>
+                            <label><input class="uk-radio" type="radio" name="tipo_cambio" value="1"> Automático</label>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="input-cv">Cavalaria</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="input-cv" type="number">
+                        </div>
+                    </div>
+                
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="input-lmotor">Litragem Motor</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="input-lmotor" type="number">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="input-lmala">Litragem Mala</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="input-lmala" type="number">
+                        </div>
+                    </div>
+
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="input-passageiros">Passageiros</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="input-passageiros" type="number">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label">Carroceria</label>
+                        <div class="uk-form-controls">
+                            <select class="uk-select" id="tipo_carroceria">
+                                <option value="0">Sedã</option>
+                                <option value="1">Hatch</option>
+                                <option value="2">SUV</option>
+                                <option value="3">Picape</option>
+                                <option value="4">Cupê</option>
+                                <option value="5">Perua</option>
+                                <option value="6">Van/Minivan</option>
+                                <option value="7">Conversível</option>
+                                <option value="8">Jipe</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="desc">Descrição</label>
+                        <div class="uk-form-controls">
+                            <textarea class="uk-textarea" id="desc" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin" uk-margin>
+                        <label class="uk-form-label">Imagens</label>
+                        <div class="uk-form-controls">
+                            <div uk-form-custom="target: true">
+                                <input type="file">
+                                <input class="uk-input uk-form-width-medium" type="text" placeholder="Escolha as Fotos" disabled>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <button id="anunciar-button" class="uk-width-1-1 uk-button-primary uk-button-large" type="button">Anunciar</button>
+                    </div>
+
+                </form>
+            </div>
+            
+
+        </main>
+
+        <footer>
+            <div class="uk-grid-match uk-grid-small uk-text-center" uk-grid>
+                <div class="uk-width-1-2@m">
+                    <div class="uk-card uk-card-default uk-card-body">Rua Fulano de Tal - Estado Beltrano</div>
+                </div>
+                
+                <div class="uk-width-1-2@m">
+                    <div class="uk-card uk-card-default uk-card-body">Contato: (-47) 99900-6169</div>
+                </div>
+                
+                <div class="uk-width-1-1@m">
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <a href="#" aria-label="Contatos - Twitter" tabindex="4" class="uk-icon-button uk-margin-small-right" uk-icon="twitter"></a>
+                        <a href="#" aria-label="Contatos - Facebook" tabindex="5" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook"></a>
+                        <a href="#" aria-label="Contatos - Google+" tabindex="6" class="uk-icon-button" uk-icon="google-plus"></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+</html>

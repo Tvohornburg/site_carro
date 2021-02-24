@@ -1,0 +1,26 @@
+#form-cadastro{
+    display: none;
+}
+
+.uk-button{
+    border: solid 1px black;
+    background-color: white;
+    color: black;
+}
+
+#b-op-login{
+    background-color: #111;
+    color: white;
+}
+
+#b-op-login, #b-op-cadastro {
+    padding: 10px 30px !important;
+    margin: 10px 50px !important;
+}
+
+@media screen and (min-width:640px){
+    #b-op-login, #b-op-cadastro {
+        padding: initial !important;
+        margin: initial !important;
+    }
+}

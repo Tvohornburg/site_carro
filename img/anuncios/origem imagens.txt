@@ -1,0 +1,21 @@
+a0: https://www.webmotors.com.br/comprar/honda/civic/1-5-16v-turbo-gasolina-touring-4p-cvt/4-portas/2018/35555429?pos=f35555429g:&np=1
+
+a1: https://www.webmotors.com.br/comprar/volkswagen/fusca/1-3-l-8v-gasolina-2p-manual/2-portas/1975/20652237?pos=c20652237c:&np=1
+ 
+a2: https://www.webmotors.com.br/comprar/ford/rural/2-8-4x4-6-cilindros-12v-gasolina-2p-manual/2-portas/1973/35461188?pos=f35461188g:&np=1
+
+a3: https://df.olx.com.br/distrito-federal-e-regiao/autos-e-pecas/carros-vans-e-utilitarios/gol-1-0-mpi-845456174
+
+a4: https://www.webmotors.com.br/comprar/chevrolet/s10/2-8-16v-turbo-diesel-high-country-cd-4x4-automatico/4-portas/2021/35657157?pos=c35657157m:&np=1
+ 
+a5: https://www.webmotors.com.br/comprar/bmw/320i/2-0-16v-turbo-gasolina-m-sport-automatico/4-portas/2019-2020/35660177?pos=v35660177g:&np=1
+ 
+a6: https://www.webmotors.com.br/comprar/jeep/compass/2-0-16v-diesel-limited-4x4-automatico/4-portas/2020/35770875?pos=f35770875g:&np=1
+ 
+a7: https://www.webmotors.com.br/comprar/chevrolet/spin/1-8-ltz-8v-flex-4p-automatico/4-portas/2016/34630152?pos=g34630152c:&np=1 
+
+a8: https://www.webmotors.com.br/comprar/ford/fusion/2-0-titanium-16v-hibrido-4p-automatico/4-portas/2018/35771326?pos=b35771326m:&np=1
+ 
+a9: https://www.webmotors.com.br/comprar/ferrari/488-gtb/3-9-v8-turbo-gasolina-f1-dct/2-portas/2016/34966920?pos=c34966920g:&np=1
+
+a10: https://www.autenticar.pt/viaturas/renault-zoe-intense/ 

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Uma plataforma de Anúncios de Veículos criada para apresentação na disciplina de Desenvolvimento Web I - Bacharelado em Ciências da Computação - IFC Campus Blumenau">
+        <meta name="keywords" content="Trabalho Web, Desenvolvimento Web, Plataforma de Anúncios, Veículos, Uikit">
+        <meta name="author" content="Gabriel Eduardo Lima e Thiago Vinícius de Oliveira Hornburg">
+        
+        <link rel="shortcut icon" href="img/icon.png">
+        
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/css/uikit.min.css" />
+
+        <!-- UIkit JS -->
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit-icons.min.js"></script>
+
+        <!-- CSS Próprio -->
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/menu.css">
+
+        <!-- JS Próprio -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/modelo.js"></script>
+        <script src="js/base_dados.js"></script>
+        <script src="js/login.js"></script>
+        <script src="js/pagina_veiculo.js"></script>
+        <script src="js/perfil.js"></script>
+        
+
+        <title>Perfil</title>
+
+    <script>
+$(document).ready(function(){
+
+    carregar_dados(sessionStorage.getItem("user_id"));
+
+    $("#editar-perfil").click(editar_perfil);
+    
+    $("#button-salvar").click(function(){
+        location.reload();
+        alert("Dados alterados com Sucesso!")
+    });
+    
+    $("#button-cancelar").click(function(){
+        location.reload();
+        alert("Operação Cancelada!")
+    });
+
+    $("#meus-anuncios").click(function(){
+        carregar_meus_anuncios(sessionStorage.getItem("user_id"));
+    });
+
+    $("#meus-favoritos").click(function(){
+        carregar_meus_favoritos();
+    });
+
+    $("#sair").click(logout);
+    
+});
+
+    </script>
+
+    </head>
+    <body>
+        <header class="uk-margin">
+
+            <!-- 
+                Menu para quando o usuário estiver usando dispositivos de tela pequena!
+                Mesma solução adotada pelos exemplos do framework Uikit
+            -->
+            <nav id="nav-display-primario" class="uk-navbar uk-navbar-container" uk-navbar>
+                <div class="uk-navbar-left">
+                    <a id="toggle-menu" class="uk-navbar-toggle" href="#menu-offcanvas" uk-toggle>
+                        <span uk-navbar-toggle-icon></span><span class="uk-margin-small-left">Menu</span>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- 
+                Menu offcanvas que será ativado por um link do menu primário
+            -->
+            <div id="menu-offcanvas" uk-offcanvas="overlay: true">
+                <div class="uk-offcanvas-bar">
+                    <button aria-label="Fechar Menu Principal" class="uk-offcanvas-close" type="button" uk-close></button>
+
+                    <ul class="uk-nav uk-nav-default">
+                        <li class="uk-active"><span class="logo">LOGO</span></li>
+                        <li class="uk-nav-divider"></li>
+                        <li class="uk-nav-header"><a href="index.html">Home</a></li>
+                        <li class="uk-nav-header">Anúncios</li>
+                        <li><a href="comprar.html"> Comprar</a></li>
+                        <li><a href="vender.html"> Vender</a></li>
+                        <li class="uk-nav-header"><a class="link-login" href="#">Conta</a></li>
+                        <li class="uk-nav-divider"></li>
+                    </ul>
+                
+                </div>
+            </div>
+
+            <!-- 
+                Menu para quando o usuário estiver usando dispositivos de tela grande!
+                Mesma solução adotada pelos exemplos do framework Uikit
+            -->
+            <nav id="nav-display-secundario" class="uk-navbar-container" uk-navbar>
+                
+                <div class="uk-navbar-left">
+                    <ul class="uk-navbar-nav">
+                        <li><span class="logo">LOGO</span></li>
+                    </ul>
+                </div>
+                
+                <div class="uk-navbar-right">
+                    <ul class="uk-navbar-nav">
+                        <li><a href="index.html" tabindex="1" accesskey="h">Home</a></li>
+                        <li>
+                            <a href="#" tabindex="2" accesskey="a">Anúncios</a>
+                            <div class="uk-navbar-dropdown">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li><a href="comprar.html" accesskey="c">Comprar</a></li>
+                                    <li><a href="vender.html" accesskey="v">Vender</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a class="link-login" href="#" tabindex="3" accesskey="u">Usuário</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+        </header>
+
+        <main id="main-content" class="uk-container uk-margin">
+        
+            <div id="menu-usuario" class="uk-grid-divider uk-margin uk-grid-column-medium" uk-grid>
+                
+                <div class="uk-width-1-4@m">
+                    <div class="uk-width-1-2@s uk-width-2-5@m" style="width: auto;">
+                        <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>            
+                            <li><a id="editar-perfil" href="#" tabindex="4" accesskey="e">Editar Perfil</a></li>
+                            <li class="uk-parent">
+                                <a href="#">Anúncios</a>
+                                <ul class="uk-nav-sub">
+                                    <li><a id="meus-anuncios" href="#" tabindex="5" accesskey="m">Meus Anúncios</a></li>
+                                    <li><a id="meus-favoritos" href="#" tabindex="6" accesskey="f">Meus Favoritos</a></li>
+                                </ul>
+                            </li>
+                            <li><a id="sair" href="#" tabindex="7" accesskey="s">Sair</a></li>
+                        </ul> 
+                    </div>
+                </div>
+
+
+                <div id="conteudo" class="uk-width-3-4@m uk-margin">
+                    
+                    <div id="dados_usuario" class="uk-width-medium-1-4 uk-push-1-4 uk-text-center uk-row-first uk-margin">
+                        <div class="uk-thumbnail uk-overlay-hover uk-border-circle">
+                            <figure class="uk-overlay">
+                                <img class="uk-border-circle" width="250" height="250" src="img/perfil.svg" alt="Sua Imagem de Perfil">
+                            </figure>
+                        </div>
+                        <h3 class="uk-margin-bottom-remove">Bem vindo!</h3>
+                    </div>
+
+                    <div id="alterar_dados_usuario" class="uk-width-medium-1-4 uk-push-1-4 uk-text-center uk-row-first uk-margin">
+                        <form class="uk-form-stacked">
+
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="usuario-nome">Nome</label>
+                                <div class="uk-form-controls">
+                                    <div class="uk-inline">
+                                        <input class="uk-input" id="usuario-nome" type="text" readonly>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="usuario-email">Email</label>
+                                <div class="uk-form-controls">
+                                    <div class="uk-inline">
+                                        <input class="uk-input" id="usuario-email" type="text" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="usuario-tipo-conta">Tipo da Conta</label>
+                                <div class="uk-form-controls">
+                                    <div class="uk-inline">
+                                        <input class="uk-input" id="usuario-tipo-conta" type="text" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="dados-alteracao" style="display: none;">
+
+                                <div class="uk-margin" uk-margin>
+                                    <div uk-form-custom="target: true">
+                                        <input type="file">
+                                        <input class="uk-input uk-form-width-medium" type="text" placeholder="Imagem Perfil" disabled>
+                                    </div>
+                                    <button class="uk-button uk-button-primary">Upload</button>
+                                </div>
+                                
+                                <div class="uk-margin">
+                                    <label class="uk-form-label" for="usuario-senha-antiga">Senha Antiga</label>
+                                    <div class="uk-form-controls">
+                                        <div class="uk-inline">
+                                            <input class="uk-input" id="usuario-senha-antiga" type="password" required>
+                                        </div>
+                                    </div>
+                                </div> 
+
+                                <div class="uk-margin">
+                                    <label class="uk-form-label" for="usuario-senha-nova">Senha Nova</label>
+                                    <div class="uk-form-controls">
+                                        <div class="uk-inline">
+                                            <input class="uk-input" id="usuario-senha-nova" type="password">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="uk-margin">
+                                    <button id="button-salvar" class="uk-button-primary uk-button-large" type="button">Salvar</button>
+                                    <button id="button-cancelar" class="uk-button-primary uk-button-large" type="button">Cancelar</button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="anuncios" class="uk-grid-divider uk-margin uk-grid-column-medium" uk-grid>
+                
+                        <div id="lista-1" class="uk-width-1-2@m"></div>
+                        <div id="lista1" class="uk-width-1-2@m"></div>
+                    
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+        <footer>
+            <div class="uk-grid-match uk-grid-small uk-text-center" uk-grid>
+                <div class="uk-width-1-2@m">
+                    <div class="uk-card uk-card-default uk-card-body">Rua Fulano de Tal - Estado Beltrano</div>
+                </div>
+                
+                <div class="uk-width-1-2@m">
+                    <div class="uk-card uk-card-default uk-card-body">Contato: (-47) 99900-6169</div>
+                </div>
+                
+                <div class="uk-width-1-1@m">
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <a href="#" aria-label="Contatos - Twitter" tabindex="8" class="uk-icon-button uk-margin-small-right" uk-icon="twitter"></a>
+                        <a href="#" aria-label="Contatos - Facebook" tabindex="9" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook"></a>
+                        <a href="#" aria-label="Contatos - Google+" tabindex="10" class="uk-icon-button" uk-icon="google-plus"></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+</html>
